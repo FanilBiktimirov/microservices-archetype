@@ -29,11 +29,6 @@ if (!includeDBProperty.equals("true")) {
 if (!includeClientProperty.equals("true")) {
     deleteDirectory(clientModuleDirectoryPath.toFile())
 }
-if (linkToGitRepository?.trim()
-        && !linkToGitRepository.equals("null")
-        && !linkToGitRepository.equals("none")) {
-    initGitRepo(linkToGitRepository)
-}
 
 def deleteDirectory(File directoryToBeDeleted) {
     def allContents = directoryToBeDeleted.listFiles();

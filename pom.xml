@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ru.billing.system.archetype</groupId>
-  <artifactId>billing-service-archetype</artifactId>
+  <artifactId>billing-system-archetype</artifactId>
   <version>1.0.0</version>
   <packaging>maven-archetype</packaging>
 
-  <name>${artifactId}</name>
+  <name>${project.artifactId}</name>
 
   <build>
     <extensions>
