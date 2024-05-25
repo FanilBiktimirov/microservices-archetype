@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor
+        xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
+        name="billing-system-archetype"
+        xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <requiredProperties>
+        <requiredProperty key="groupId">
+            <defaultValue>ru.billing.system.app</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="version">
+            <defaultValue>1.0.0</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="revisionValue">
+            <defaultValue>${version}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="billingSystemCoreVersionDefaultValue">
+            <defaultValue>1.0.0</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="billingSystemCoreVersion">
+            <defaultValue>${billingSystemCoreVersionDefaultValue}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="parentVersionDefaultValue">
+            <defaultValue>1.0.0</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="parentVersion">
+            <defaultValue>${parentVersionDefaultValue}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="includeDbDefaultValue">
+            <defaultValue>false</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="includeDb">
+            <defaultValue>${includeDbDefaultValue}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="includeClientDefaultValue">
+            <defaultValue>true</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="includeClient">
+            <defaultValue>${includeClientDefaultValue}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="groupIdValue">
+            <defaultValue>${groupId}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="extraPackage">
+            <defaultValue>${artifactId.replace('-','/')}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="extraPackageForClass">
+            <defaultValue>${artifactId.replace('-','.')}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="groupIdPackage">
+            <defaultValue>${groupIdValue.replace('.','/')}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="groupIdLibPackage">
+            <defaultValue>${groupIdPackage.replace('app','lib')}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="groupIdLibPackageForClass">
+            <defaultValue>${groupIdValue.replace('app','lib')}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="defaultRepository">
+            <defaultValue>none</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="linkToGitRepository">
+            <defaultValue>${defaultRepository}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="gitignore">
+            <defaultValue>.gitignore</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
+    <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>__gitignore__</include>
+                <include>.gitlab-ci.yml</include>
+                <include>CHANGELOG.md</include>
+                <include>README.md</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+    <modules>
+        <module id="${rootArtifactId}-shared" dir="__rootArtifactId__-shared" name="${rootArtifactId}-shared">
+            <fileSets>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdLibPackage__/__extraPackage__/constant</directory>
+                </fileSet>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdLibPackage__/__extraPackage__/dto</directory>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/test/java/__groupIdLibPackage__/__extraPackage__</directory>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/test/resources</directory>
+                    <includes>
+                        <include>**/*.yaml</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory></directory>
+                    <includes>
+                        <include>lombok.config</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="${rootArtifactId}-starter" dir="__rootArtifactId__-starter" name="${rootArtifactId}-starter">
+            <fileSets>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdLibPackage__/__extraPackage__/configuration</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdLibPackage__/__extraPackage__/service</directory>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.factories</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/test/java/__groupIdLibPackage__/__extraPackage__</directory>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/test/resources</directory>
+                    <includes>
+                        <include>**/*.yaml</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory></directory>
+                    <includes>
+                        <include>lombok.config</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="${rootArtifactId}-api" dir="__rootArtifactId__-api" name="${rootArtifactId}-api">
+            <fileSets>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdPackage__/__extraPackage__</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdPackage__/__extraPackage__/controller</directory>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.yaml</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/test/java/__groupIdPackage__/__extraPackage__</directory>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/test/resources</directory>
+                    <includes>
+                        <include>**/*.yaml</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory></directory>
+                    <includes>
+                        <include>lombok.config</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="${rootArtifactId}-client" dir="__rootArtifactId__-client" name="${rootArtifactId}-client">
+            <fileSets>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdLibPackage__/__extraPackage__/configuration</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdLibPackage__/__extraPackage__/client</directory>
+                </fileSet>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdLibPackage__/__extraPackage__/feign</directory>
+                </fileSet>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdLibPackage__/__extraPackage__/constant</directory>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.factories</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/test/java/__groupIdLibPackage__/__extraPackage__</directory>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/test/resources</directory>
+                    <includes>
+                        <include>**/*.yaml</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory></directory>
+                    <includes>
+                        <include>lombok.config</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="${rootArtifactId}-db" dir="__rootArtifactId__-db" name="${rootArtifactId}-db">
+            <fileSets>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdLibPackage__/__extraPackage__/configuration</directory>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdLibPackage__/__extraPackage__/entity</directory>
+                </fileSet>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>src/main/java/__groupIdLibPackage__/__extraPackage__/repository</directory>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.factories</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/test/java/__groupIdLibPackage__/__extraPackage__</directory>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/test/resources</directory>
+                    <includes>
+                        <include>**/*.yaml</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory></directory>
+                    <includes>
+                        <include>lombok.config</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+    </modules>
+</archetype-descriptor>
