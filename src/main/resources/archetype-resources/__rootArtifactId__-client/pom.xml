@@ -8,7 +8,7 @@
         <version>${revision}</version>
     </parent>
 
-    <groupId>ru.billing system.lib</groupId>
+    <groupId>ru.billing.system.lib</groupId>
     <artifactId>${artifactId}</artifactId>
 
     <dependencies>
