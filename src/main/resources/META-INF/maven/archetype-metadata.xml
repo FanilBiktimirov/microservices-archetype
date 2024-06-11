@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archetype-descriptor
         xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
-        name="billing-system-archetype"
+        name="microservice-archetype"
         xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <requiredProperties>
         <requiredProperty key="groupId">
-            <defaultValue>ru.billing.system.app</defaultValue>
+            <defaultValue>ru.microservice.system.app</defaultValue>
         </requiredProperty>
         <requiredProperty key="version">
             <defaultValue>1.0.0</defaultValue>
@@ -15,17 +15,11 @@
         <requiredProperty key="revisionValue">
             <defaultValue>${version}</defaultValue>
         </requiredProperty>
-        <requiredProperty key="billingSystemCoreVersionDefaultValue">
-            <defaultValue>1.0.0</defaultValue>
+        <requiredProperty key="springBootVersionDefaultValue">
+            <defaultValue>3.2.6</defaultValue>
         </requiredProperty>
-        <requiredProperty key="billingSystemCoreVersion">
-            <defaultValue>${billingSystemCoreVersionDefaultValue}</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="parentVersionDefaultValue">
-            <defaultValue>1.0.0</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="parentVersion">
-            <defaultValue>${parentVersionDefaultValue}</defaultValue>
+        <requiredProperty key="springBootVersion">
+            <defaultValue>${springBootVersionDefaultValue}</defaultValue>
         </requiredProperty>
         <requiredProperty key="includeDbDefaultValue">
             <defaultValue>false</defaultValue>
@@ -56,12 +50,6 @@
         </requiredProperty>
         <requiredProperty key="groupIdLibPackageForClass">
             <defaultValue>${groupIdValue.replace('app','lib')}</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="defaultRepository">
-            <defaultValue>none</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="linkToGitRepository">
-            <defaultValue>${defaultRepository}</defaultValue>
         </requiredProperty>
         <requiredProperty key="gitignore">
             <defaultValue>.gitignore</defaultValue>

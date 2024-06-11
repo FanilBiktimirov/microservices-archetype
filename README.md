@@ -1,6 +1,6 @@
-# billing-services-archetype
+# microservices-archetype
 
-Это шаблон для создания сервисов с подготовленной структурой и минимально необходимым набором зависимостей и
+Это шаблон для создания микросервиса с подготовленной структурой и минимально необходимым набором зависимостей и
 настроек
 
 # Создание проекта на основе архетипа
@@ -16,34 +16,33 @@ maven-плагин
 
 3. в появившемся окне заполните:
 
-* groupId: `ru.billing.system.archetype`
-* artifactId: `billing-system-archetype`
+* groupId: `ru.microservice.archetype`
+* artifactId: `microservice-archetype`
 * version: **<актуальная версия>**
 
-5. выберите из списка архетипов `billing-system-archetype`
+5. выберите из списка архетипов `microservice-archetype`
 
 6. заполните `groupId`, `artifactId` & `version`
 
 7. в списке `properties` передайте следующие переменные:
 
-|        Переменная         | Значение по умолчанию |                    Описание                    |
-|:-------------------------:|:---------------------:|:----------------------------------------------:|
-| billingSystemCoreVersion  |         1.0.0         |        Версия библиотеки `billing-core`        |
-| parentVersionDefaultValue |         1.0.0         | Версия библиотеки `billing-system-app-parent`  |
-|       revisionValue       |         1.0.0         |             Версия maven-артефакта             |
-|         includeDb         |         false         |   Флаг добавления опционального модуля `-db`   |
-|       includeClient       |         true          | Флаг добавления опционального модуля `-client` |
+|              Переменная              | Значение по умолчанию |                    Описание                    |
+|:------------------------------------:|:---------------------:|:----------------------------------------------:|
+|          springBootVersion           |         3.2.6         |        Версия фреймворка `spring-boot`         |
+| springBootVersionVersionDefaultValue |         3.2.6         | Версия фреймворка по умолчанию `spring-boot`   |
+|            revisionValue             |         1.0.0         |             Версия maven-артефакта             |
+|              includeDb               |         false         |   Флаг добавления опционального модуля `-db`   |
+|            includeClient             |         true          | Флаг добавления опционального модуля `-client` |
 
 ## Создание с использованием командной строки
 
 1. в командной строке перейдите в директорию, в которой хотите создать проект, при помощи команды `cd ...`
 
-2. введите команду `mvn archetype:generate -DarchetypeGroupId=ru.billing.system.archetype -DarchetypeArtifactId=billing.system-archetype -DarchetypeVersion=` **<актуальная версия>**
+2. введите команду `mvn archetype:generate -DarchetypeGroupId=ru.microservice.archetype -DarchetypeArtifactId=microservice-archetype -DarchetypeVersion=` **<актуальная версия>**
 
 3. из предложенного введите:
 
 - `revisionValue`
-- `parentVersion`
 - `includeDb` (установите `true` если в проекте нужен модуль `-db`)
 - `includeClient` (установите `false` если в проекте не нужен модуль `-client`)
 

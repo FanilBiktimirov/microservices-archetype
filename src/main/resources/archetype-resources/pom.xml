@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
     <blankLine/>
     <parent>
-        <groupId>ru.billing.system.app</groupId>
-        <artifactId>billing-system-app-parent</artifactId>
-        <version>${parentVersion}</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>3.2.6</version>
     </parent>
 
     <blankLine/>
@@ -18,33 +18,5 @@
     <blankLine/>
     <properties>
         <revision>${revisionValue}</revision>
-        <billing-system-core.version>${billingSystemCoreVersion}</billing-system-core.version>
     </properties>
-    <blankLine/>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>ru.billing.system.lib</groupId>
-                <artifactId>commons-starter</artifactId>
-                <version>${billing-system-core.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>ru.billing.system.lib</groupId>
-                <artifactId>client-commons-starter</artifactId>
-                <version>${billing-system-core.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>ru.billing.system.lib</groupId>
-                <artifactId>service-commons-starter</artifactId>
-                <version>${billing-system-core.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>ru.billing.system.lib</groupId>
-                <artifactId>token-validation-jwt-starter</artifactId>
-                <version>${billing-system-core.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-    <blankLine/>
 </project>

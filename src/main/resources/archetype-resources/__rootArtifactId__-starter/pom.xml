@@ -8,21 +8,21 @@
         <version>${revision}</version>
     </parent>
 
-    <groupId>ru.billing.system.lib</groupId>
+    <groupId>ru.microservice.lib</groupId>
     <artifactId>${artifactId}</artifactId>
 
     <dependencies>
-        <!-- Billing dependencies -->
         <dependency>
-            <groupId>ru.billing.system.lib</groupId>
+            <groupId>ru.microservice.lib</groupId>
             <artifactId>${rootArtifactId}-shared</artifactId>
             <version>${revision}</version>
         </dependency>
         <dependency>
-            <groupId>ru.billing.system.lib</groupId>
-            <artifactId>commons-starter</artifactId>
+            <groupId>ru.microservice.lib</groupId>
+            <artifactId>${rootArtifactId}-db</artifactId>
+            <version>${revision}</version>
         </dependency>
-        <!-- NON Billing dependencies -->
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -31,11 +31,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

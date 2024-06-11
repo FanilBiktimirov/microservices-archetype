@@ -8,17 +8,15 @@
         <version>${revision}</version>
     </parent>
 
-    <groupId>ru.billing.system.lib</groupId>
+    <groupId>ru.microservice.lib</groupId>
     <artifactId>${artifactId}</artifactId>
 
     <dependencies>
-        <!-- Billing dependencies -->
         <dependency>
-            <groupId>ru.billing.system.lib</groupId>
+            <groupId>ru.microservice.lib</groupId>
             <artifactId>${rootArtifactId}-shared</artifactId>
             <version>${revision}</version>
         </dependency>
-        <!-- NON Billing dependencies -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -26,12 +24,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
         </dependency>
     </dependencies>
 </project>

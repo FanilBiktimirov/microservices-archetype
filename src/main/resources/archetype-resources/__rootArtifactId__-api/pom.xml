@@ -12,22 +12,11 @@
     <name>${artifactId}</name>
 
     <dependencies>
-        <!-- Billing system dependencies -->
         <dependency>
-            <groupId>ru.billing.system.lib</groupId>
+            <groupId>ru.microservice.lib</groupId>
             <artifactId>${rootArtifactId}-starter</artifactId>
             <version>${revision}</version>
         </dependency>
-        <dependency>
-            <groupId>ru.billing.system.lib</groupId>
-            <artifactId>token-validation-jwt-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ru.billing.system.lib</groupId>
-            <artifactId>service-commons-starter</artifactId>
-        </dependency>
-
-        <!-- NON billing system dependencies -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

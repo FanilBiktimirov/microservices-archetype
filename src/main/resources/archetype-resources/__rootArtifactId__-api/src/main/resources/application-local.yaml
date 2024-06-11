@@ -1,27 +1,10 @@
 # --------------------
-# Core spring settings
+# Security settings
 # --------------------
 
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          disabled: ${SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_DISABLED}
-          issuer-uri: ${SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI}
-          jwk-set-uri: ${SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK_SET_URI}
-
-# ----------------
-# Logging settings
-# ----------------
-
-logging:
-  type: JSON
-  config: classpath:ru/billing/system/lib/logback/json.xml
-  exclude-path: /swagger-ui/**,/v3/api-docs/**,/actuator/**
-  masquerading:
-    max-len: 80
-    invert-default: false
+app:
+  jwt:
+    jwtExpirationMs: 8600000
 
 # --------------------
 # BUSINESS settings

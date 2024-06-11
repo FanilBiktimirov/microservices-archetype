@@ -30,6 +30,8 @@ if (!includeClientProperty.equals("true")) {
     deleteDirectory(clientModuleDirectoryPath.toFile())
 }
 
+initGitRepo()
+
 def deleteDirectory(File directoryToBeDeleted) {
     def allContents = directoryToBeDeleted.listFiles();
     if (allContents) {
@@ -59,9 +61,8 @@ def appendInPom(StringBuilder sb, String currentLine) {
     sb.append("\n")
 }
 
-def initGitRepo(repositoryUrl) {
+def initGitRepo() {
     runCommand("git init -b develop", "./${artifactId}")
-    runCommand("git remote add origin ${repositoryUrl}", "./${artifactId}")
 }
 
 static def runCommand(String command, String workDir) {
