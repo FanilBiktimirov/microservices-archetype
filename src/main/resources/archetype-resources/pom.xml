@@ -10,6 +10,7 @@
     </parent>
 
     <blankLine/>
+    <groupId>${groupId}</groupId>
     <artifactId>${artifactId}</artifactId>
     <blankLine/>
     <version>${revision}</version>
