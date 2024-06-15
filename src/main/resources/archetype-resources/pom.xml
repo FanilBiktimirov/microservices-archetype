@@ -19,5 +19,6 @@
     <blankLine/>
     <properties>
         <revision>${revisionValue}</revision>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
